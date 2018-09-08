@@ -1,0 +1,24 @@
+PODS:
+  - ActionStageSwift (0.2.0)
+  - POPAPIKit (1.0.9):
+    - Result (~> 4.0)
+  - Result (4.0.0)
+
+DEPENDENCIES:
+  - ActionStageSwift
+  - POPAPIKit
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ActionStageSwift
+    - POPAPIKit
+    - Result
+
+SPEC CHECKSUMS:
+  ActionStageSwift: 99af441efc7c0841008a7a7f719ee654d542f97b
+  POPAPIKit: 4122bde95e7279d2441309794a725750b05f09d9
+  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
+
+PODFILE CHECKSUM: 0642982eec52f1c6226705212748431b9a87cb11
+
+COCOAPODS: 1.5.3

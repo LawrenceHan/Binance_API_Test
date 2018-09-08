@@ -1,0 +1,6 @@
+framework module POPAPIKit {
+  umbrella header "POPAPIKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
