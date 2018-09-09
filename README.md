@@ -1,2 +1,3 @@
 # Binance_API_Test
-Only for Test
+
+### DO NOT use for COMMERCIAL. This only for Binance Test.
