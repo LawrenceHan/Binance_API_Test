@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func loadView() {
         super.loadView()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor(hex: 0x15161C)!
         let title = UILabel()
         title.text = "Markets"
         title.textColor = UIColor(hex: 0xA7A9AC)
@@ -101,18 +101,33 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             height: 50
         )
         
+        var offset: CGFloat = 50.0
+        if searchController.isActive {
+            if iPhoneX() {
+                offset = view.safeTopValue-searchController.searchBar.frame.size.height
+            } else {
+                offset = searchController.searchBar.frame.size.height-50;
+            }
+        }
+        
         tableView.frame = CGRect(
             x: 0,
-            y: segmentedControl.frame.origin.y+segmentedControl.frame.size.height,
+            y: offset,
             width: view.bounds.width,
-            height: view.bounds.height-segmentedControl.frame.size.height-view.safeBottomValue
+            height: view.bounds.height-offset-view.safeBottomValue
         )
+        
+        if iPhoneX() {
+            offset = 52
+        } else {
+            offset = 64;
+        }
         
         resultsTableController.tableView.frame = CGRect(
             x: 0,
-            y: -70,
+            y: -offset,
             width: resultsTableController.tableView.bounds.width,
-            height: resultsTableController.tableView.bounds.height+70
+            height: resultsTableController.tableView.bounds.height+offset
         )
     }
     
@@ -178,6 +193,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 extension ViewController {
     @objc func activeSearch() {
+        if !products.isEmpty {
+            tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+        }
         tableView.topPullToRefresh?.isEnabled = false
         segmentedControl.isHidden = true
         tableView.tableHeaderView = searchController.searchBar
@@ -326,7 +344,7 @@ extension ViewController: UISearchResultsUpdating {
             NSComparisonPredicate(leftExpression: volumeExpression,
                                   rightExpression: searchStringExpression,
                                   modifier: .direct,
-                                  type: .contains,
+                                  type: .beginsWith,
                                   options: .caseInsensitive)
         
         searchItemsPredicate.append(volumePredicate)
@@ -337,7 +355,7 @@ extension ViewController: UISearchResultsUpdating {
             NSComparisonPredicate(leftExpression: openExpression,
                                   rightExpression: searchStringExpression,
                                   modifier: .direct,
-                                  type: .contains,
+                                  type: .beginsWith,
                                   options: .caseInsensitive)
         
         searchItemsPredicate.append(openPredicate)
@@ -354,10 +372,10 @@ extension ViewController: UISearchResultsUpdating {
             let targetNumberExpression = NSExpression(forConstantValue: targetNumber!)
             
             // `tradedMoney` field matching.
-            let tradedMoneyExpression = NSExpression(forKeyPath: "tradedMoney")
+            let lhs = NSExpression(forKeyPath: "tradedMoney")
             
             let tradedMoneyPredicate =
-                NSComparisonPredicate(leftExpression: tradedMoneyExpression,
+                NSComparisonPredicate(leftExpression: lhs,
                                       rightExpression: targetNumberExpression,
                                       modifier: .direct,
                                       type: .equalTo,
@@ -403,6 +421,7 @@ extension ViewController: UISearchResultsUpdating {
 extension ViewController: XMSegmentedControlDelegate {
     func xmSegmentedControl(_ xmSegmentedControl: XMSegmentedControl, selectedSegment: Int) {
         currentIndex = selectedSegment
+        guard !products.isEmpty else { return }
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         products = filteredData[currentIndex]
         tableView.reloadSections([0], with: .automatic)
