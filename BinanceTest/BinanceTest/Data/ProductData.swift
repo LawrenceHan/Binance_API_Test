@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct Product: Codable {
-    let data: [ProductData]
+class Product: NSObject, Codable {
+    @objc var data: [ProductData] = []
 }
 
 //{
@@ -41,62 +41,62 @@ struct Product: Codable {
 //    "minQty": 1e-8
 //}
 
-struct ProductData: Codable {
-    let symbol: String
-    let quoteAssetName: String
-    let tradedMoney: Double
-    let baseAssetUnit: String
-    let baseAssetName: String
-    let baseAsset: String
-    let tickSize: String
-    let prevClose: Double
-    let activeBuy: Int
-    let high: String
-    let lastAggTradeId: Int
-    let low: String
-    let matchingUnitType: String
-    let close: String
-    let quoteAsset: String
-    let productType: String?
-    let active: Bool
-    let minTrade: Double
-    let activeSell: Double
-    let withdrawFee: String
-    let volume: String
-    let decimalPlaces: Int
-    let quoteAssetUnit: String
-    let open: String
-    let status: String
-    let minQty: Double
+class ProductData: NSObject, Codable {
+    @objc var symbol: String = ""
+    @objc var quoteAssetName: String = ""
+    @objc var tradedMoney: Double = 0
+    @objc var baseAssetUnit: String = ""
+    @objc var baseAssetName: String = ""
+    @objc var baseAsset: String = ""
+    @objc var tickSize: String = ""
+    @objc var prevClose: Double = 0
+    @objc var activeBuy: Int = 0
+    @objc var high: String = ""
+    @objc var lastAggTradeId: Int = 0
+    @objc var low: String = ""
+    @objc var matchingUnitType: String = ""
+    @objc var close: String = ""
+    @objc var quoteAsset: String = ""
+    @objc var productType: String?
+    @objc var active: Bool = false
+    @objc var minTrade: Double = 0
+    @objc var activeSell: Double = 0
+    @objc var withdrawFee: String = ""
+    @objc var volume: String = ""
+    @objc var decimalPlaces: Int = 0
+    @objc var quoteAssetUnit: String = ""
+    @objc var open: String = ""
+    @objc var status: String = ""
+    @objc var minQty: Double = 0
 }
 
-extension ProductData: Equatable {
-    public static func == (lhs: ProductData, rhs: ProductData) -> Bool {
-        return lhs.symbol == rhs.symbol &&
-        lhs.quoteAssetName == rhs.quoteAssetName &&
-        lhs.tradedMoney == rhs.tradedMoney &&
-        lhs.baseAssetUnit == rhs.baseAssetUnit &&
-        lhs.baseAssetName == rhs.baseAssetName &&
-        lhs.baseAsset == rhs.baseAsset &&
-        lhs.tickSize == rhs.tickSize &&
-        lhs.prevClose == rhs.prevClose &&
-        lhs.activeBuy == rhs.activeBuy &&
-        lhs.high == rhs.high &&
-        lhs.lastAggTradeId == rhs.lastAggTradeId &&
-        lhs.low == rhs.low &&
-        lhs.matchingUnitType == rhs.matchingUnitType &&
-        lhs.close == rhs.close &&
-        lhs.quoteAsset == rhs.quoteAsset &&
-        lhs.productType == rhs.productType &&
-        lhs.active == rhs.active &&
-        lhs.minTrade == rhs.minTrade &&
-        lhs.activeSell == rhs.activeSell &&
-        lhs.withdrawFee == rhs.withdrawFee &&
-        lhs.volume == rhs.volume &&
-        lhs.decimalPlaces == rhs.decimalPlaces &&
-        lhs.quoteAssetUnit == rhs.quoteAssetUnit &&
-        lhs.open == rhs.open &&
-        lhs.status == rhs.status &&
-        lhs.minQty == rhs.minQty
-    }
-}
+//extension ProductData: Equatable {
+//    public static func == (lhs: ProductData, rhs: ProductData) -> Bool {
+//        return lhs.symbol == rhs.symbol &&
+//        lhs.quoteAssetName == rhs.quoteAssetName &&
+//        lhs.tradedMoney == rhs.tradedMoney &&
+//        lhs.baseAssetUnit == rhs.baseAssetUnit &&
+//        lhs.baseAssetName == rhs.baseAssetName &&
+//        lhs.baseAsset == rhs.baseAsset &&
+//        lhs.tickSize == rhs.tickSize &&
+//        lhs.prevClose == rhs.prevClose &&
+//        lhs.activeBuy == rhs.activeBuy &&
+//        lhs.high == rhs.high &&
+//        lhs.lastAggTradeId == rhs.lastAggTradeId &&
+//        lhs.low == rhs.low &&
+//        lhs.matchingUnitType == rhs.matchingUnitType &&
+//        lhs.close == rhs.close &&
+//        lhs.quoteAsset == rhs.quoteAsset &&
+//        lhs.productType == rhs.productType &&
+//        lhs.active == rhs.active &&
+//        lhs.minTrade == rhs.minTrade &&
+//        lhs.activeSell == rhs.activeSell &&
+//        lhs.withdrawFee == rhs.withdrawFee &&
+//        lhs.volume == rhs.volume &&
+//        lhs.decimalPlaces == rhs.decimalPlaces &&
+//        lhs.quoteAssetUnit == rhs.quoteAssetUnit &&
+//        lhs.open == rhs.open &&
+//        lhs.status == rhs.status &&
+//        lhs.minQty == rhs.minQty
+//    }
+//}

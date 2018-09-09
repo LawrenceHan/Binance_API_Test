@@ -28,8 +28,14 @@ extension ErrorHandleable {
 extension Interceptable {
     /// Before sending a request to Session
     func intercept(urlRequest: URLRequest) throws -> URLRequest {
+        var request = urlRequest
+        
+        // set timeout
+        request.timeoutInterval = 15.0
+        
         // Maybe redirect the request to a test server
-        return urlRequest
+        
+        return request
     }
     
     /// After received response from server
