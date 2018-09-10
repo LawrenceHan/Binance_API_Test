@@ -23,7 +23,6 @@
 		02C5D79A21441D79009A6B9B /* BinanceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C5D79921441D79009A6B9B /* BinanceAPI.swift */; };
 		02C5D79C214422A1009A6B9B /* RawDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C5D79B214422A1009A6B9B /* RawDataParser.swift */; };
 		02C5D79E21442BE2009A6B9B /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C5D79D21442BE2009A6B9B /* ErrorHandler.swift */; };
-		02C5D7A72144D065009A6B9B /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C5D7A32144D065009A6B9B /* MainTableViewController.swift */; };
 		02C5D7A82144D065009A6B9B /* ResultsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C5D7A42144D065009A6B9B /* ResultsTableController.swift */; };
 		02C5D7AA2144D065009A6B9B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C5D7A62144D065009A6B9B /* BaseTableViewController.swift */; };
 		02C5D7AC2144D408009A6B9B /* ProductDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C5D7AB2144D408009A6B9B /* ProductDataCell.swift */; };
@@ -56,7 +55,6 @@
 		02C5D79921441D79009A6B9B /* BinanceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinanceAPI.swift; sourceTree = "<group>"; };
 		02C5D79B214422A1009A6B9B /* RawDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawDataParser.swift; sourceTree = "<group>"; };
 		02C5D79D21442BE2009A6B9B /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
-		02C5D7A32144D065009A6B9B /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		02C5D7A42144D065009A6B9B /* ResultsTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsTableController.swift; sourceTree = "<group>"; };
 		02C5D7A62144D065009A6B9B /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		02C5D7AB2144D408009A6B9B /* ProductDataCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataCell.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				02C5D7A62144D065009A6B9B /* BaseTableViewController.swift */,
-				02C5D7A32144D065009A6B9B /* MainTableViewController.swift */,
 				02C5D7A42144D065009A6B9B /* ResultsTableController.swift */,
 				02C5D7AB2144D408009A6B9B /* ProductDataCell.swift */,
 				02C5D7AD2144D8CA009A6B9B /* ColorUtils.swift */,
@@ -336,7 +333,6 @@
 				02C5D79E21442BE2009A6B9B /* ErrorHandler.swift in Sources */,
 				02C5D7B2214534D5009A6B9B /* BaseNavigationController.swift in Sources */,
 				02C5D7A82144D065009A6B9B /* ResultsTableController.swift in Sources */,
-				02C5D7A72144D065009A6B9B /* MainTableViewController.swift in Sources */,
 				02C5D7AE2144D8CA009A6B9B /* ColorUtils.swift in Sources */,
 				02C5D72B214132FD009A6B9B /* ViewController.swift in Sources */,
 				02C5D74721414F20009A6B9B /* State.swift in Sources */,
