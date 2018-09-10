@@ -8,11 +8,27 @@ The table view controller responsible for displaying the filtered products as th
 
 import UIKit
 
-class ResultsTableController: BaseTableViewController {
+class ResultsTableController: UITableViewController, CellConfigurable {
     
     // MARK: - Properties
     
     var filteredProducts = [ProductData]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Required if our subclasses are to use `dequeueReusableCellWithIdentifier(_:forIndexPath:)`.
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.separatorColor = UIColor(hex: 0x1D1F24)
+        tableView.tableFooterView = UIView()
+        tableView.rowHeight = 80
+        tableView.register(ProductDataCell.self)
+        tableView.backgroundColor = UIColor.gray
+        tableView.allowsSelection = false
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
+    }
     
     // MARK: - UITableViewDataSource
     

@@ -218,7 +218,6 @@ extension ViewController {
         if path == "/exchange/public/product" {
             LHWDispatchOnMainThread { [unowned self] in
                 if let result = resource as? [[ProductData]] {
-                    self.tableView.endRefreshing(at: .top)
                     self.filteredData = result
                     if !self.products.isEmpty {
                         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
@@ -226,6 +225,7 @@ extension ViewController {
                     self.products = self.filteredData[self.currentIndex]
                     self.tableView.reloadData()
                 }
+                self.tableView.endRefreshing(at: .top)
             }
         }
     }
