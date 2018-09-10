@@ -28,6 +28,7 @@ class ResultsTableController: UITableViewController, CellConfigurable {
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
+        tableView.indicatorStyle = .white
     }
     
     // MARK: - UITableViewDataSource

@@ -80,6 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
         }
+        tableView.indicatorStyle = .white
         
         tableView.addPullToRefresh(PullToRefresh()) { [weak self] in
             guard let `self` = self else { return }
