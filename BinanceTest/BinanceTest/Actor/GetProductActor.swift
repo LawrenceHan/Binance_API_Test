@@ -20,7 +20,7 @@ class GetProductActor: BaseActor {
         let start = CFAbsoluteTimeGetCurrent()
         
         let request = BinanceAPI.GetProductRequest()
-        APIKit.send(request) { [weak self] (result) in
+        self.cancelToken = APIKit.send(request) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
             case .success(let product):
